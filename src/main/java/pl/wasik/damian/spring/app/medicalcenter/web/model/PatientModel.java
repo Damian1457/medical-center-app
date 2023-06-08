@@ -1,7 +1,7 @@
 package pl.wasik.damian.spring.app.medicalcenter.web.model;
 
 public class PatientModel {
-
+    private Long id;
     private String name;
     private int age;
     private String gender;
@@ -16,6 +16,24 @@ public class PatientModel {
         this.address = address;
         this.phoneNumber = phoneNumber;
         this.medicalHistory = medicalHistory;
+    }
+
+    public PatientModel(Long id, String name, int age, String gender, String address, String phoneNumber, String medicalHistory) {
+        this.id = id;
+        this.name = name;
+        this.age = age;
+        this.gender = gender;
+        this.address = address;
+        this.phoneNumber = phoneNumber;
+        this.medicalHistory = medicalHistory;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getName() {

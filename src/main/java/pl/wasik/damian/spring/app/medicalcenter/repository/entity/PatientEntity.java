@@ -4,6 +4,7 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -32,7 +33,13 @@ public class PatientEntity {
     @Column(name = "MEDICAL_HISTORY")
     private String medicalHistory;
 
+    @OneToOne
+    private DoctorEntity doctorEntity;
+
     public PatientEntity() {
+    }
+
+    public PatientEntity(String name, int age, String gender, String address, String phoneNumber, String medicalHistory) {
     }
 
     public void setId(Long id) {
@@ -61,6 +68,34 @@ public class PatientEntity {
 
     public void setMedicalHistory(String medicalHistory) {
         this.medicalHistory = medicalHistory;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public String getMedicalHistory() {
+        return medicalHistory;
     }
 }
 
